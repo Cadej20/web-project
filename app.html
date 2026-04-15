@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Smith Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f1ea;
+            color: #222222;
+            margin: 0;
+            padding: 0;
+        }
+
+        .app-container {
+            max-width: 850px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 35px;
+            border: 2px solid #cbbd9b;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1f3a5f;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .quote-box {
+            background-color: #eef3f8;
+            border-left: 6px solid #1f3a5f;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 8px;
+            min-height: 140px;
+        }
+
+        #quote {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        #source {
+            font-size: 17px;
+            color: #555555;
+            font-style: italic;
+        }
+
+        button {
+            background-color: #1f3a5f;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2c4d77;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #1f3a5f;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>Joseph Smith Quote Generator</h1>
+        <p class="intro">
+            Click the button below to view a quote connected to Joseph Smith and the Restoration.
+        </p>
+
+        <div class="quote-box">
+            <p id="quote">Click the button to generate a quote.</p>
+            <p id="source"></p>
+        </div>
+
+        <button onclick="generateQuote()">Show Another Quote</button>
+
+        <br>
+        <a class="back-link" href="scratch.html">← Back to Scratch Page</a>
+    </div>
+
+    <script>
+        const quotes = [
+            {
+                quote: "I saw a pillar of light exactly over my head, above the brightness of the sun.",
+                source: "Joseph Smith—History 1:16"
+            },
+            {
+                quote: "I had actually seen a light, and in the midst of that light I saw two Personages.",
+                source: "Joseph Smith—History 1:25"
+            },
+            {
+                quote: "The Book of Mormon is the most correct of any book on earth.",
+                source: "Joseph Smith"
+            },
+            {
+                quote: "Happiness is the object and design of our existence.",
+                source: "Joseph Smith"
+            },
+            {
+                quote: "By proving contraries, truth is made manifest.",
+                source: "Joseph Smith"
+            },
+            {
+                quote: "I teach them correct principles, and they govern themselves.",
+                source: "Joseph Smith"
+            }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").textContent = '"' + quotes[randomIndex].quote + '"';
+            document.getElementById("source").textContent = quotes[randomIndex].source;
+        }
+    </script>
+
+</body>
+</html>
